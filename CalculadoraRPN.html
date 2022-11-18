@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="author" content="Silvia Suárez Prendes" />
+	<meta name="viewport" content="width=device-width, initial scale=1.0" />
+
+	<title>Calculadora RPN</title>
+
+	<link rel="stylesheet" href="estilo/CalculadoraRPN.css">
+
+	<script src="CalculadoraRPN.js"></script>
+</head>
+
+<body onload="calculadora.inicializar()">
+
+	<form>
+
+		<label for="pantalla">Calculadora RPN</label> 
+
+		<!--5 botones por cada fila x 5 filas = 25 botones-->
+
+		<!--Pantalla donde se ven los resultados-->
+		<input type="text" name="pantalla" id="pantalla" value="" lang="es" disabled>
+		<textarea name="pantallaPila" id="pantallaPila" lang="es" disabled> </textarea>
+
+		<!--Primera fila de botones-->
+		<input type="button" value="C" onclick="calculadora.borrar()" />
+		<input type="button" value="DEL" onclick="calculadora.del()" />
+		<input type="button" value="+/-" onclick="calculadora.masMenos()" />
+		<input type="button" value="√" onclick="calculadora.raizCuadrada()" />
+		
+		<!--Segunda fila de botones-->
+		<input type="button" value="x^y" onclick="calculadora.potencia()" />
+		<input type="button" value="SIN" onclick="calculadora.sin()" />
+		<input type="button" value="COS" onclick="calculadora.cos()" />
+		<input type="button" value="TAN" onclick="calculadora.tan()" />
+
+		
+		<input type="button" value="x" onclick="calculadora.multiplicacion()" />
+		<input type="button" value="ASIN" onclick="calculadora.asin()" />
+		<input type="button" value="ACOS" onclick="calculadora.acos()" />
+		<input type="button" value="ATAN" onclick="calculadora.atan()" />
+
+		<!--Tercera fila de botones-->
+		<input type="button" value="/" onclick="calculadora.division()" />
+		<input type="button" value="+" onclick="calculadora.suma()" />
+		<input type="button" value="-" onclick="calculadora.resta()" />
+		<input type="button" value="π" onclick="calculadora.pi()" />
+
+		<!--Cuarta fila de botones-->
+		<input type="button" value="." onclick="calculadora.punto()" />
+		<input type="button" value="7" onclick="calculadora.numero(7)" />
+		<input type="button" value="8" onclick="calculadora.numero(8)" />
+		<input type="button" value="9" onclick="calculadora.numero(9)" />
+
+		<!--Quinta fila de botones-->
+		<input type="button" value="0" onclick="calculadora.numero(0)" />
+		<input type="button" value="4" onclick="calculadora.numero(4)" />
+		<input type="button" value="5" onclick="calculadora.numero(5)" />
+		<input type="button" value="6" onclick="calculadora.numero(6)" />
+		
+		
+		<!--Cuarta fila de botones-->			
+		<input type="button" value="ENTER" onclick="calculadora.enter()" />	
+		<input type="button" value="1" onclick="calculadora.numero(1)" />
+		<input type="button" value="2" onclick="calculadora.numero(2)" />
+		<input type="button" value="3" onclick="calculadora.numero(3)" />
+
+		<input type="submit" value="submit" />
+
+	</form>
+
+</body>
+
+</html>

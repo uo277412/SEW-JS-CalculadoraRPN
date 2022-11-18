@@ -1,0 +1,121 @@
+/* /* Silvia Suárez Prendes, UO277412
+
+/*Selector Specificity: (0, 0, 1)*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    margin-top: 5%;
+    margin-left: 40%;
+    margin-right: 30%;
+    width: 19em;
+    text-align: center;
+    
+    color: rgb(0, 0, 0);
+}
+
+/*Selector Specificity: (0, 0, 1)*/
+/*Selector Specificity: (0, 0, 1)*/
+form {
+    /* grid layout */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.5em;
+
+    padding: 0.5em;
+    background-color: rgb(191, 191, 191);
+    min-height: 9vh;
+}
+
+
+label {
+    text-align: left;
+
+    grid-column: span 4;
+    font-size: 1em;
+}
+
+/*Selector Specificity: (0, 1, 1)*/
+input[type=text][name="pantalla"] { 
+    grid-column: span 4;
+    height: 2em;
+    text-align: right;
+    font-size: 1em;
+    border: none;
+    align-self: center;
+    
+    color: rgb(0, 0, 0);
+}
+
+/*Selector Specificity: (0, 1, 1)*/
+textarea { 
+    grid-column: span 4;
+    grid-row: span 3;
+    text-align: right;
+    font-size: 1.5em;
+    border: none;
+    align-self: right;
+    
+    color: rgb(0, 0, 0);
+}
+
+/*Selector Specificity: (0, 1, 1)*/
+input[type=text][name="relleno"] {
+    grid-column: span 2;
+    
+    height: 2em;
+
+    text-align: right;
+    font-size: 1em;
+    border: none;
+    align-self: center;
+    
+    color: rgb(0, 0, 0);
+    background-color: rgb(191, 191, 191);
+}
+
+
+/*Selector Specificity: (0, 1, 1)*/
+input[type=button] {
+    background-color: rgb(220, 217, 217);
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/*Selector Specificity: (0, 1, 1)*/
+input[type=button][value="ENTER"] {
+    background-color:  rgb(160, 177, 192);
+    font-size: 0.75em;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* BOTONES */
+/*Selector Specificity: (0, 2, 1)*/
+input[type=button][value="0"],
+input[type=button][value="1"],
+input[type=button][value="2"],
+input[type=button][value="3"],
+input[type=button][value="4"],
+input[type=button][value="5"],
+input[type=button][value="6"],
+input[type=button][value="7"],
+input[type=button][value="8"],
+input[type=button][value="9"] {
+    background-color: rgba(240, 240, 255);
+}
+
+/*Selector Specificity: (0, 2, 1)*/
+input[type=button][value="DEL"],
+input[type=button][value="SIN"],
+input[type=button][value="ASIN"],
+input[type=button][value="COS"],
+input[type=button][value="ACOS"],
+input[type=button][value="TAN"],
+input[type=button][value="ATAN"] {
+    font-size: 0.75em;
+}
+/*Selector Specificity: (0, 1, 1)*/
+input[type=submit] {
+    visibility: hidden;
+}
