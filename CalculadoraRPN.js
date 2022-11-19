@@ -65,7 +65,7 @@ class PilaLIFO {
 
 class CalculadoraRPN {
 
-    constructor(pila) {
+    constructor() {
         this.pila = new PilaLIFO();
     }
 
@@ -245,4 +245,4 @@ document.addEventListener('keydown', function (event) {
 
 
 pila = new PilaLIFO();
-calculadora = new CalculadoraRPN(pila);
+calculadora = new CalculadoraRPN();
