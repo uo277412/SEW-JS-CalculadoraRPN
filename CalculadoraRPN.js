@@ -11,7 +11,7 @@ class PilaLIFO {
 
     pop() {
         if (!this.estaVacia()) {
-            this.cima -= 1;
+            this.ultimo -= 1;
             return this.elementos.pop();
         }
     }
@@ -20,7 +20,7 @@ class PilaLIFO {
         return this.ultimo + 1; // numero de elementos en la pila 
     }
 
-    mostrar(pila) {
+    mostrar() {
         if (this.size == 0)
             return;
 
@@ -66,12 +66,11 @@ class PilaLIFO {
 class CalculadoraRPN {
 
     constructor(pila) {
-        this.pila = pila;
+        this.pila = new PilaLIFO();
     }
 
     inicializar() {
         this.pantalla = document.querySelector('input[type=text][name=\"pantalla\"]');
-        this.pantallaPila = document.querySelector('input[type=text][name=\"pantallaPila\"]');
     }
 
     borrar() {
@@ -113,14 +112,19 @@ class CalculadoraRPN {
 
     division() {
         if (this.pila.size() >= 2) {
-            this.pila.push(this.pila.pop() / this.pila.pop()); // dos últimos elementos añadidos
+            var dcha = this.pila.pop();
+            var izq =  this.pila.pop();
+            var res = izq/dcha;
+            this.pila.push(res); // dos últimos elementos añadidos
             this.mostrarEnPantalla();
         }
     }
 
     resta() {
         if (this.pila.size() >= 2) {
-            this.pila.push(this.pila.pop() - this.pila.pop());
+            var dcha = this.pila.pop();
+            var izq =  this.pila.pop();
+            this.pila.push(izq-dcha);
             this.mostrarEnPantalla();
         }
     }
@@ -195,7 +199,7 @@ class CalculadoraRPN {
 
     mostrarEnPantalla() {
         if (!this.pila.estaVacia()) {
-            document.querySelector('textarea[name=\"pantallaPila\"]').innerHTML = this.pila.mostrar(this.pila);
+            document.querySelector('textarea[name=\"pantallaPila\"]').innerHTML = this.pila.mostrar();
         }
     }
 }
